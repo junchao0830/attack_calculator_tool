@@ -35,15 +35,15 @@ with st.container():
         
         key_1 = '每秒攻击力'
         attack_per_second = st.number_input(
-                key_1,
+                '每秒攻击力 （范围：0-100000）',
                 min_value=configs_dict[key_1][0],
                 max_value=configs_dict[key_1][1],
                 value=configs_dict[key_1][2],
             )
-        
+
         key_2 = '暴击率'
         sudden_attack_rate = st.number_input(
-                key_2,
+                '暴击率 （范围：0-1）',
                 min_value=configs_dict[key_2][0],
                 max_value=configs_dict[key_2][1],
                 value=configs_dict[key_2][2],
@@ -51,12 +51,12 @@ with st.container():
 
         key_3 = '暴击伤害倍率'
         damage_multi_rate = st.number_input(
-                key_3,
+                '暴击伤害倍率 （范围：0-100）',
                 min_value=configs_dict[key_3][0],
                 max_value=configs_dict[key_3][1],
                 value=configs_dict[key_3][2],
             )
-        
+
         result = attack_per_second*(1-sudden_attack_rate)+attack_per_second*(sudden_attack_rate*damage_multi_rate)
 
         
